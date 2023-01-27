@@ -11,7 +11,6 @@ async def start(_, m: Message):
     await m.reply(
         f'Hi {m.from_user.mention(style="md")}, Send me a file to get an instant stream link.'
     )
-    
     if START_PIC:
         await message.reply_photo(START_PIC, caption=txt, reply_markup=button)       
     else:
