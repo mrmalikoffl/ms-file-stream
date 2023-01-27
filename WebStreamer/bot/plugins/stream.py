@@ -1,5 +1,5 @@
-# This file is a part of TG-FileStreamBot
-# Coding : Jyothis Jayanth [@EverythingSuckz]
+# This file is a part of ms-file-stream
+# Coding : Mr Malik [@mrmalik_offl]
 
 import logging
 from pyrogram import filters, errors
@@ -39,7 +39,7 @@ async def media_receive_handler(_, m: Message):
             quote=True,
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Open", url=stream_link)]]
+                [[InlineKeyboardButton("📥 Download Now 📥", url=short_link)]]
             ),
         )
     except errors.ButtonUrlInvalid:
