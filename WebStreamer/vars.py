@@ -2,6 +2,7 @@
 # Coding : Mr Malik [@mrmalik_offl]
 
 import sys
+import os
 from os import environ
 from dotenv import load_dotenv
 
@@ -30,7 +31,7 @@ class Var(object):
     URL = "http{}://{}{}/".format(
             "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
         )
-    START_PIC = str(environ.get("START_PIC", "")
+    START_PIC = os.environ.get("START_PIC", "")
     KEEP_ALIVE = str(environ.get("KEEP_ALIVE", "0").lower()) in  ("1", "true", "t", "yes", "y")
     DEBUG = str(environ.get("DEBUG", "0").lower()) in ("1", "true", "t", "yes", "y")
     USE_SESSION_FILE = str(environ.get("USE_SESSION_FILE", "0").lower()) in ("1", "true", "t", "yes", "y")
