@@ -20,13 +20,13 @@ jobs:
       - name: Package Server
         run: |
           rm -fr .vscode .git*
-          zip -r ${{ github.WORKSPACE }}/ms-file-stream-v${{ env.VERSION }}-main.zip *
+          zip -r ${{ github.WORKSPACE }}/TG-FileStreamBot-v${{ env.VERSION }}-main.zip *
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          name: ms-file-stream-v${{ env.VERSION }} (main)
+          name: TG-FileStreamBot-v${{ env.VERSION }} (main)
           body_path: CHANGELOGS.md
           files: |
-            ${{ github.WORKSPACE }}/ms-file-stream-v${{ env.VERSION }}-main.zip
+            ${{ github.WORKSPACE }}/TG-FileStreamBot-v${{ env.VERSION }}-main.zip
           prerelease: false
           tag_name: v${{ env.VERSION }}
