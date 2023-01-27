@@ -1,5 +1,5 @@
-# This file is a part of TG-FileStreamBot
-# Coding : Jyothis Jayanth [@EverythingSuckz]
+# This file is a part of ms-file-stream
+# Coding : Mr Malik [@mrmalik_offl]
 
 from .keepalive import ping_server
 from .time_format import get_readable_time
