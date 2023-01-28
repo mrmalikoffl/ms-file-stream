@@ -6,7 +6,7 @@ from pyrogram import filters, errors
 from WebStreamer.vars import Var
 from urllib.parse import quote_plus
 from WebStreamer.bot import StreamBot, logger
-from WebStreamer.utils import get_hash, get_name
+from WebStreamer.utils import get_hash, get_name, get_media_file_size
 from pyrogram.enums.parse_mode import ParseMode
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -31,14 +31,17 @@ async def media_receive_handler(_, m: Message):
     short_link = f"{Var.URL}{file_hash}{log_msg.id}"
     logger.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     try:
+        
+        msg_text ="""<i><u>𝗬𝗼𝘂𝗿 𝗟𝗶𝗻𝗸 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱 !</u></i>\n\n<b>📂 Fɪʟᴇ ɴᴀᴍᴇ :</b> <i>{}</i>\n\n<b>📦 Fɪʟᴇ ꜱɪᴢᴇ :</b> <i>{}</i>\n\n<b>📥 Dᴏᴡɴʟᴏᴀᴅ :</b> <i>{}</i>\n\n<b>🚸 Nᴏᴛᴇ : LINK WON'T EXPIRE TILL I DELETE</b>"""
+        
         await m.reply_text(
-            text="𝗧𝗜𝗧𝗟𝗘:\n<code>{}</code>\n\n𝗛𝗲𝗿𝗲 𝗜𝘀 𝗬𝗼𝘂𝗿 𝗙𝗮𝘀𝘁 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗟𝗶𝗻𝗸 📥\n\n𝗧𝗵𝗮𝗻𝗸𝘀 𝗙𝗼𝗿 𝗨𝘀𝗶𝗻𝗴 𝗠𝗲❤️".format(
-                short_link
-            ),
+            text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), stream_link, short_link),
             quote=True,
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("📥 Download Now 📥", url=short_link)],
+                [[InlineKeyboardButton(
+                    text=f"📥 Download Now 📥", 
+                    url=await get_shortlink(f"{Var.URL}{file_hash}{log_msg.id}"))],
                  [InlineKeyboardButton("👨🏻‍💻 Developer 👨🏻‍💻", url='https://t.me/mrmalik_offl'),
                   InlineKeyboardButton("🚀 Bot Updates 🚀", url='https://t.me/+rN9QCFgIihgyZWM1')]]
             ),
