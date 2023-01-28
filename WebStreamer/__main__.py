@@ -52,16 +52,14 @@ async def start_services():
         logging.info("DC ID =>> {}".format(str(bot_info.dc_id)))
     logging.info("URL =>> {}".format(Var.URL))
     await idle()
-    
-    async def cleanup():
+
+async def cleanup():
     await server.cleanup()
     await StreamBot.stop()
 
 if __name__ == "__main__":
     try:
         loop.run_until_complete(start_services())
-    except KeyboardInterrupt:
-        pass
 
 async def get_shortlink(link):
     https = link.split(":")[0]
