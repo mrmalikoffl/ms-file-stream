@@ -32,7 +32,6 @@ class Var(object):
             "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
         )
     # URL Shortener #
-
     URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'dulink.in')
     URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '6426621836b31128ed4785ab66affcdd71d73139')
     KEEP_ALIVE = str(environ.get("KEEP_ALIVE", "0").lower()) in  ("1", "true", "t", "yes", "y")
