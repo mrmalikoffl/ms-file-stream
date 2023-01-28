@@ -4,7 +4,6 @@
 from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
-from .vars import START_PIC
 
 @StreamBot.on_message(filters.command(["start", "help"]))
 async def start(_, m: Message):
