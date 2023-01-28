@@ -68,3 +68,13 @@ if __name__ == "__main__":
         loop.run_until_complete(cleanup())
         loop.stop()
         logging.info("Stopped Services")
+
+async def get_shortlink(link):
+    url = f'https://dulink.in/api'
+    params = {'api': URL_SHORTNER_WEBSITE_API, 'url': link}
+
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
+                data = await response.json()
+                    return data['shortenedUrl']
