@@ -53,20 +53,6 @@ async def start_services():
     logging.info("URL =>> {}".format(Var.URL))
     await idle()
 
-async def cleanup():
-    await server.cleanup()
-    await StreamBot.stop()
-
-if __name__ == "__main__":
-    try:
-        loop.run_until_complete(start_services())
-    except KeyboardInterrupt:
-        pass
-    except Exception as err:
-        logging.error(err.with_traceback(None))
-    finally:
-        logging.info("Stopped Services")
-
 async def get_shortlink(link):
     https = link.split(":")[0]
     if "http" == https:
