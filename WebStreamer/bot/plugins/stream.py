@@ -41,8 +41,7 @@ async def media_receive_handler(_, m: Message):
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(
-                    text=f"📥 Download Now 📥", 
-                    url=await get_shortlink(f"{Var.URL}{file_hash}{log_msg.id}"))],
+                    text=f"📥 Download Now 📥", url=short_link)],
                  [InlineKeyboardButton("👨🏻‍💻 Developer 👨🏻‍💻", url='https://t.me/mrmalik_offl'),
                   InlineKeyboardButton("🚀 Bot Updates 🚀", url='https://t.me/+rN9QCFgIihgyZWM1')]]
             ),
