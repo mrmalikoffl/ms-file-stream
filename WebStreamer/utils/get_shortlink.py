@@ -1,4 +1,4 @@
-
+# (c) mr-malik
 
 async def get_shortlink(link):
     https = link.split(":")[0]
