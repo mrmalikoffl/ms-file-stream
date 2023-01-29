@@ -23,7 +23,7 @@ License Link : https://github.com/LazyDeveloperr/Gangster-Baby-Renamer-BOT/blob/
 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from helper.utils import not_subscribed 
+from helper.utils.UserNotParticipant import not_subscribed 
 
 @Client.on_message(filters.private & filters.create(not_subscribed))
 async def is_not_subscribed(client, message):
