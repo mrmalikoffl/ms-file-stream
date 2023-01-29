@@ -42,6 +42,8 @@ async def media_receive_handler(_, m: Message):
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton(
                     text=f"📥 Download Now 📥", url=short_link)],
+                 [InlineKeyboardButton("📹 Our Channel 📹", url='https://t.me/k2m_movies_series'),
+                  InlineKeyboardButton("🧔🏻 Admin 🧔🏻", url='https://t.me/Acckerman_offical')],
                  [InlineKeyboardButton("👨🏻‍💻 Developer 👨🏻‍💻", url='https://t.me/mrmalik_offl'),
                   InlineKeyboardButton("🚀 Bot Updates 🚀", url='https://t.me/+rN9QCFgIihgyZWM1')]]
             ),
