@@ -4,7 +4,6 @@
 import logging
 from pyrogram import filters, errors
 from WebStreamer.vars import Var
-from WebStreamer._main_ import get_shortlink
 from urllib.parse import quote_plus
 from WebStreamer.bot import StreamBot, logger
 from WebStreamer.utils.file_properties import get_name, get_hash, get_media_file_size
